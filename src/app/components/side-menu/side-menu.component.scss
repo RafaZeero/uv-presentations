@@ -1,0 +1,12 @@
+aside {
+  @apply flex justify-center;
+
+  div {
+    @apply border-[3px] border-blue-100 bg-sky-400 w-full cursor-pointer;
+
+    p {
+      @apply text-[18px] text-center;
+      @apply hover:font-semibold;
+    }
+  }
+}
