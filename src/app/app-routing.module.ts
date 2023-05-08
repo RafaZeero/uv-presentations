@@ -7,6 +7,16 @@ const routes: Routes = [
     loadComponent: async () =>
       await import('./components/either/either.component'),
   },
+  {
+    path: 'either/left',
+    loadComponent: async () =>
+      await import('./components/either/left/left.component'),
+  },
+  {
+    path: 'either/right',
+    loadComponent: async () =>
+      await import('./components/either/right/right.component'),
+  },
 ];
 
 @NgModule({

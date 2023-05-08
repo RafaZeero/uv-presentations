@@ -4,9 +4,14 @@
 @import "tailwindcss/utilities";
 
 h2 {
-  @apply text-[1.5rem] mx-0 my-[0.83em] font-bold block;
+  @apply text-[3rem] mx-0 my-[0.53em] font-bold block;
 }
 
 p {
-  @apply block my-[1em] mx-0;
+  @apply block my-[1em] mx-0 text-[2rem];
+}
+
+li,
+code {
+  @apply text-[1.5rem];
 }

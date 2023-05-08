@@ -1,3 +1,11 @@
 :host {
-  @apply px-[24px];
+  @apply px-[24px] pb-[36px];
+
+  img {
+    @apply pt-[50px];
+  }
+
+  .code {
+    @apply flex flex-col gap-[16px];
+  }
 }

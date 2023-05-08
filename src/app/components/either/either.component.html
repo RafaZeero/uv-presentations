@@ -4,6 +4,15 @@
 </p>
 <h2>What is Either?</h2>
 <p>
+  It is the result of a computation that can
+  <span class="text-red-600">fail</span>. Can solve the limitation that the
+  Option type has.
+</p>
+<ul>
+  <li><b>None</b> ----------&#62; Left&#60;E&#62;</li>
+  <li><b>Some&#60;A&#62;</b> ---&#62; Right&#60;A&#62;</li>
+</ul>
+<p>
   Either is an entity whose value can be of two different types, called left and
   right.
 </p>
@@ -11,3 +20,44 @@
   <li><b>Left: </b>Error path</li>
   <li><b>Right: </b>Success path</li>
 </ul>
+
+<img src="/assets/either1.png" width="800" alt="either" />
+
+<h2>How is the Either typed?</h2>
+
+<div class="code">
+  <code> type Either&lt;E, A&gt; = Left&lt;E&gt; | Right&lt;A&gt; </code>
+
+  <code>
+    type Left&#60;E&#62; = &#123; _tag: &#39;Left&#39;; left: E; &#125;;
+  </code>
+
+  <code>
+    type Right&#60;A&#62; = &#123; _tag: &#39;Right&#39;; right: A; &#125;;
+  </code>
+</div>
+
+<h2>Basic Constructors</h2>
+
+<div class="code">
+  <code
+    >const left = &#60;L, R = never&#62;(e: L): Either&#60;L, R&#62; =&#62;
+    (&#123; _tag: &#39;Left&#39;, left: e &#125;);
+  </code>
+  <code
+    >const right = &#60;R, L = never&#62;(a: R): Either&#60;L, R&#62; =&#62;
+    (&#123; _tag: &#39;Right&#39;, right: a &#125;);
+  </code>
+</div>
+
+<h2>Guards</h2>
+
+<div class="code">
+  <code
+    >const isLeft = &#60;L, R&#62;(ma: Either&#60;L, R&#62;): ma is
+    Left&#60;L&#62; =&#62; ma._tag === &#39;Left&#39;; </code
+  ><code
+    >const isRight = &#60;L, R&#62;(ma: Either&#60;L, R&#62;): ma is
+    Right&#60;R&#62; =&#62; ma._tag === &#39;Right&#39;;</code
+  >
+</div>
